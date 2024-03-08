@@ -1,0 +1,182 @@
+import typing_extensions
+
+from slack_web_python_sdk.apis.tags import TagValues
+from slack_web_python_sdk.apis.tags.admin_api import AdminApi
+from slack_web_python_sdk.apis.tags.conversations_api import ConversationsApi
+from slack_web_python_sdk.apis.tags.admin_conversations_api import AdminConversationsApi
+from slack_web_python_sdk.apis.tags.files_api import FilesApi
+from slack_web_python_sdk.apis.tags.users_api import UsersApi
+from slack_web_python_sdk.apis.tags.chat_api import ChatApi
+from slack_web_python_sdk.apis.tags.admin_users_api import AdminUsersApi
+from slack_web_python_sdk.apis.tags.apps_api import AppsApi
+from slack_web_python_sdk.apis.tags.usergroups_api import UsergroupsApi
+from slack_web_python_sdk.apis.tags.admin_teams_settings_api import AdminTeamsSettingsApi
+from slack_web_python_sdk.apis.tags.calls_api import CallsApi
+from slack_web_python_sdk.apis.tags.files_remote_api import FilesRemoteApi
+from slack_web_python_sdk.apis.tags.admin_emoji_api import AdminEmojiApi
+from slack_web_python_sdk.apis.tags.dnd_api import DndApi
+from slack_web_python_sdk.apis.tags.reminders_api import RemindersApi
+from slack_web_python_sdk.apis.tags.team_api import TeamApi
+from slack_web_python_sdk.apis.tags.admin_usergroups_api import AdminUsergroupsApi
+from slack_web_python_sdk.apis.tags.reactions_api import ReactionsApi
+from slack_web_python_sdk.apis.tags.views_api import ViewsApi
+from slack_web_python_sdk.apis.tags.admin_conversations_restrict_access_api import AdminConversationsRestrictAccessApi
+from slack_web_python_sdk.apis.tags.admin_invite_requests_api import AdminInviteRequestsApi
+from slack_web_python_sdk.apis.tags.oauth_api import OauthApi
+from slack_web_python_sdk.apis.tags.pins_api import PinsApi
+from slack_web_python_sdk.apis.tags.stars_api import StarsApi
+from slack_web_python_sdk.apis.tags.workflows_api import WorkflowsApi
+from slack_web_python_sdk.apis.tags.admin_apps_api import AdminAppsApi
+from slack_web_python_sdk.apis.tags.admin_teams_api import AdminTeamsApi
+from slack_web_python_sdk.apis.tags.admin_users_session_api import AdminUsersSessionApi
+from slack_web_python_sdk.apis.tags.apps_permissions_api import AppsPermissionsApi
+from slack_web_python_sdk.apis.tags.apps_permissions_users_api import AppsPermissionsUsersApi
+from slack_web_python_sdk.apis.tags.auth_api import AuthApi
+from slack_web_python_sdk.apis.tags.calls_participants_api import CallsParticipantsApi
+from slack_web_python_sdk.apis.tags.usergroups_users_api import UsergroupsUsersApi
+from slack_web_python_sdk.apis.tags.users_profile_api import UsersProfileApi
+from slack_web_python_sdk.apis.tags.admin_apps_approved_api import AdminAppsApprovedApi
+from slack_web_python_sdk.apis.tags.admin_apps_requests_api import AdminAppsRequestsApi
+from slack_web_python_sdk.apis.tags.admin_apps_restricted_api import AdminAppsRestrictedApi
+from slack_web_python_sdk.apis.tags.admin_conversations_ekm_api import AdminConversationsEkmApi
+from slack_web_python_sdk.apis.tags.admin_invite_requests_approved_api import AdminInviteRequestsApprovedApi
+from slack_web_python_sdk.apis.tags.admin_invite_requests_denied_api import AdminInviteRequestsDeniedApi
+from slack_web_python_sdk.apis.tags.admin_teams_admins_api import AdminTeamsAdminsApi
+from slack_web_python_sdk.apis.tags.admin_teams_owners_api import AdminTeamsOwnersApi
+from slack_web_python_sdk.apis.tags.api_api import ApiApi
+from slack_web_python_sdk.apis.tags.apps_event_authorizations_api import AppsEventAuthorizationsApi
+from slack_web_python_sdk.apis.tags.apps_permissions_resources_api import AppsPermissionsResourcesApi
+from slack_web_python_sdk.apis.tags.apps_permissions_scopes_api import AppsPermissionsScopesApi
+from slack_web_python_sdk.apis.tags.bots_api import BotsApi
+from slack_web_python_sdk.apis.tags.chat_scheduled_messages_api import ChatScheduledMessagesApi
+from slack_web_python_sdk.apis.tags.dialog_api import DialogApi
+from slack_web_python_sdk.apis.tags.emoji_api import EmojiApi
+from slack_web_python_sdk.apis.tags.files_comments_api import FilesCommentsApi
+from slack_web_python_sdk.apis.tags.migration_api import MigrationApi
+from slack_web_python_sdk.apis.tags.oauth_v2_api import OauthV2Api
+from slack_web_python_sdk.apis.tags.rtm_api import RtmApi
+from slack_web_python_sdk.apis.tags.search_api import SearchApi
+from slack_web_python_sdk.apis.tags.team_profile_api import TeamProfileApi
+
+TagToApi = typing_extensions.TypedDict(
+    'TagToApi',
+    {
+        TagValues.ADMIN: AdminApi,
+        TagValues.CONVERSATIONS: ConversationsApi,
+        TagValues.ADMIN_CONVERSATIONS: AdminConversationsApi,
+        TagValues.FILES: FilesApi,
+        TagValues.USERS: UsersApi,
+        TagValues.CHAT: ChatApi,
+        TagValues.ADMIN_USERS: AdminUsersApi,
+        TagValues.APPS: AppsApi,
+        TagValues.USERGROUPS: UsergroupsApi,
+        TagValues.ADMIN_TEAMS_SETTINGS: AdminTeamsSettingsApi,
+        TagValues.CALLS: CallsApi,
+        TagValues.FILES_REMOTE: FilesRemoteApi,
+        TagValues.ADMIN_EMOJI: AdminEmojiApi,
+        TagValues.DND: DndApi,
+        TagValues.REMINDERS: RemindersApi,
+        TagValues.TEAM: TeamApi,
+        TagValues.ADMIN_USERGROUPS: AdminUsergroupsApi,
+        TagValues.REACTIONS: ReactionsApi,
+        TagValues.VIEWS: ViewsApi,
+        TagValues.ADMIN_CONVERSATIONS_RESTRICT_ACCESS: AdminConversationsRestrictAccessApi,
+        TagValues.ADMIN_INVITE_REQUESTS: AdminInviteRequestsApi,
+        TagValues.OAUTH: OauthApi,
+        TagValues.PINS: PinsApi,
+        TagValues.STARS: StarsApi,
+        TagValues.WORKFLOWS: WorkflowsApi,
+        TagValues.ADMIN_APPS: AdminAppsApi,
+        TagValues.ADMIN_TEAMS: AdminTeamsApi,
+        TagValues.ADMIN_USERS_SESSION: AdminUsersSessionApi,
+        TagValues.APPS_PERMISSIONS: AppsPermissionsApi,
+        TagValues.APPS_PERMISSIONS_USERS: AppsPermissionsUsersApi,
+        TagValues.AUTH: AuthApi,
+        TagValues.CALLS_PARTICIPANTS: CallsParticipantsApi,
+        TagValues.USERGROUPS_USERS: UsergroupsUsersApi,
+        TagValues.USERS_PROFILE: UsersProfileApi,
+        TagValues.ADMIN_APPS_APPROVED: AdminAppsApprovedApi,
+        TagValues.ADMIN_APPS_REQUESTS: AdminAppsRequestsApi,
+        TagValues.ADMIN_APPS_RESTRICTED: AdminAppsRestrictedApi,
+        TagValues.ADMIN_CONVERSATIONS_EKM: AdminConversationsEkmApi,
+        TagValues.ADMIN_INVITE_REQUESTS_APPROVED: AdminInviteRequestsApprovedApi,
+        TagValues.ADMIN_INVITE_REQUESTS_DENIED: AdminInviteRequestsDeniedApi,
+        TagValues.ADMIN_TEAMS_ADMINS: AdminTeamsAdminsApi,
+        TagValues.ADMIN_TEAMS_OWNERS: AdminTeamsOwnersApi,
+        TagValues.API: ApiApi,
+        TagValues.APPS_EVENT_AUTHORIZATIONS: AppsEventAuthorizationsApi,
+        TagValues.APPS_PERMISSIONS_RESOURCES: AppsPermissionsResourcesApi,
+        TagValues.APPS_PERMISSIONS_SCOPES: AppsPermissionsScopesApi,
+        TagValues.BOTS: BotsApi,
+        TagValues.CHAT_SCHEDULED_MESSAGES: ChatScheduledMessagesApi,
+        TagValues.DIALOG: DialogApi,
+        TagValues.EMOJI: EmojiApi,
+        TagValues.FILES_COMMENTS: FilesCommentsApi,
+        TagValues.MIGRATION: MigrationApi,
+        TagValues.OAUTH_V2: OauthV2Api,
+        TagValues.RTM: RtmApi,
+        TagValues.SEARCH: SearchApi,
+        TagValues.TEAM_PROFILE: TeamProfileApi,
+    }
+)
+
+tag_to_api = TagToApi(
+    {
+        TagValues.ADMIN: AdminApi,
+        TagValues.CONVERSATIONS: ConversationsApi,
+        TagValues.ADMIN_CONVERSATIONS: AdminConversationsApi,
+        TagValues.FILES: FilesApi,
+        TagValues.USERS: UsersApi,
+        TagValues.CHAT: ChatApi,
+        TagValues.ADMIN_USERS: AdminUsersApi,
+        TagValues.APPS: AppsApi,
+        TagValues.USERGROUPS: UsergroupsApi,
+        TagValues.ADMIN_TEAMS_SETTINGS: AdminTeamsSettingsApi,
+        TagValues.CALLS: CallsApi,
+        TagValues.FILES_REMOTE: FilesRemoteApi,
+        TagValues.ADMIN_EMOJI: AdminEmojiApi,
+        TagValues.DND: DndApi,
+        TagValues.REMINDERS: RemindersApi,
+        TagValues.TEAM: TeamApi,
+        TagValues.ADMIN_USERGROUPS: AdminUsergroupsApi,
+        TagValues.REACTIONS: ReactionsApi,
+        TagValues.VIEWS: ViewsApi,
+        TagValues.ADMIN_CONVERSATIONS_RESTRICT_ACCESS: AdminConversationsRestrictAccessApi,
+        TagValues.ADMIN_INVITE_REQUESTS: AdminInviteRequestsApi,
+        TagValues.OAUTH: OauthApi,
+        TagValues.PINS: PinsApi,
+        TagValues.STARS: StarsApi,
+        TagValues.WORKFLOWS: WorkflowsApi,
+        TagValues.ADMIN_APPS: AdminAppsApi,
+        TagValues.ADMIN_TEAMS: AdminTeamsApi,
+        TagValues.ADMIN_USERS_SESSION: AdminUsersSessionApi,
+        TagValues.APPS_PERMISSIONS: AppsPermissionsApi,
+        TagValues.APPS_PERMISSIONS_USERS: AppsPermissionsUsersApi,
+        TagValues.AUTH: AuthApi,
+        TagValues.CALLS_PARTICIPANTS: CallsParticipantsApi,
+        TagValues.USERGROUPS_USERS: UsergroupsUsersApi,
+        TagValues.USERS_PROFILE: UsersProfileApi,
+        TagValues.ADMIN_APPS_APPROVED: AdminAppsApprovedApi,
+        TagValues.ADMIN_APPS_REQUESTS: AdminAppsRequestsApi,
+        TagValues.ADMIN_APPS_RESTRICTED: AdminAppsRestrictedApi,
+        TagValues.ADMIN_CONVERSATIONS_EKM: AdminConversationsEkmApi,
+        TagValues.ADMIN_INVITE_REQUESTS_APPROVED: AdminInviteRequestsApprovedApi,
+        TagValues.ADMIN_INVITE_REQUESTS_DENIED: AdminInviteRequestsDeniedApi,
+        TagValues.ADMIN_TEAMS_ADMINS: AdminTeamsAdminsApi,
+        TagValues.ADMIN_TEAMS_OWNERS: AdminTeamsOwnersApi,
+        TagValues.API: ApiApi,
+        TagValues.APPS_EVENT_AUTHORIZATIONS: AppsEventAuthorizationsApi,
+        TagValues.APPS_PERMISSIONS_RESOURCES: AppsPermissionsResourcesApi,
+        TagValues.APPS_PERMISSIONS_SCOPES: AppsPermissionsScopesApi,
+        TagValues.BOTS: BotsApi,
+        TagValues.CHAT_SCHEDULED_MESSAGES: ChatScheduledMessagesApi,
+        TagValues.DIALOG: DialogApi,
+        TagValues.EMOJI: EmojiApi,
+        TagValues.FILES_COMMENTS: FilesCommentsApi,
+        TagValues.MIGRATION: MigrationApi,
+        TagValues.OAUTH_V2: OauthV2Api,
+        TagValues.RTM: RtmApi,
+        TagValues.SEARCH: SearchApi,
+        TagValues.TEAM_PROFILE: TeamProfileApi,
+    }
+)
