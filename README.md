@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 [![Visit Slack](./header.png)](https://slack.dev)
 
@@ -293,9 +293,8 @@ from pprint import pprint
 from slack_web_python_sdk import SlackWeb, ApiException
 
 slackweb = SlackWeb(
-
-    client_id = 'YOUR_CLIENT_ID',
-    client_secret = 'YOUR_CLIENT_SECRET',
+    client_id="YOUR_CLIENT_ID",
+    client_secret="YOUR_CLIENT_SECRET",
 )
 
 try:
@@ -320,16 +319,15 @@ except ApiException as e:
 `async` support is available by prepending `a` to any method.
 
 ```python
-
 import asyncio
 from pprint import pprint
 from slack_web_python_sdk import SlackWeb, ApiException
 
 slackweb = SlackWeb(
-
-    client_id = 'YOUR_CLIENT_ID',
-    client_secret = 'YOUR_CLIENT_SECRET',
+    client_id="YOUR_CLIENT_ID",
+    client_secret="YOUR_CLIENT_SECRET",
 )
+
 
 async def main():
     try:
@@ -348,6 +346,7 @@ async def main():
         pprint(e.reason)
         pprint(e.round_trip_time)
 
+
 asyncio.run(main())
 ```
 
@@ -360,9 +359,8 @@ from pprint import pprint
 from slack_web_python_sdk import SlackWeb, ApiException
 
 slackweb = SlackWeb(
-
-    client_id = 'YOUR_CLIENT_ID',
-    client_secret = 'YOUR_CLIENT_SECRET',
+    client_id="YOUR_CLIENT_ID",
+    client_secret="YOUR_CLIENT_SECRET",
 )
 
 try:
@@ -848,13 +846,15 @@ Create a public or private channel-based conversation.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_channel_based_conversation_response = slackweb.admin.create_channel_based_conversation(
-    token="token_example",
-    is_private=True,
-    name="string_example",
-    description="string_example",
-    org_wide=True,
-    team_id="string_example",
+create_channel_based_conversation_response = (
+    slackweb.admin.create_channel_based_conversation(
+        token="token_example",
+        is_private=True,
+        name="string_example",
+        description="string_example",
+        org_wide=True,
+        team_id="string_example",
+    )
 )
 ```
 
@@ -1789,12 +1789,14 @@ List all disconnected channels—i.e., channels that were once connected to othe
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_original_connected_channel_info_response = slackweb.admin.list_original_connected_channel_info(
-    token="token_example",
-    channel_ids="string_example",
-    team_ids="string_example",
-    limit=1,
-    cursor="string_example",
+list_original_connected_channel_info_response = (
+    slackweb.admin.list_original_connected_channel_info(
+        token="token_example",
+        channel_ids="string_example",
+        team_ids="string_example",
+        limit=1,
+        cursor="string_example",
+    )
 )
 ```
 
@@ -1882,11 +1884,13 @@ List all pending workspace invite requests.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_pending_workspace_invite_requests_response = slackweb.admin.list_pending_workspace_invite_requests(
-    token="token_example",
-    team_id="string_example",
-    cursor="string_example",
-    limit=1,
+list_pending_workspace_invite_requests_response = (
+    slackweb.admin.list_pending_workspace_invite_requests(
+        token="token_example",
+        team_id="string_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -2559,10 +2563,12 @@ An API method that allows admins to set the discoverability of a given workspace
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_discoverability_of_workspace_response = slackweb.admin.set_discoverability_of_workspace(
-    token="token_example",
-    discoverability="string_example",
-    team_id="string_example",
+set_discoverability_of_workspace_response = (
+    slackweb.admin.set_discoverability_of_workspace(
+        token="token_example",
+        discoverability="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -2913,7 +2919,7 @@ Approve an app for installation on a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-approve_app_installation_response = slackweb.admin/apps.approve_app_installation(
+approve_app_installation_response = slackweb.admin / apps.approve_app_installation(
     token="token_example",
     app_id="string_example",
     request_id="string_example",
@@ -2959,7 +2965,7 @@ Restrict an app for installation on a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-restrict_app_response = slackweb.admin/apps.restrict_app(
+restrict_app_response = slackweb.admin / apps.restrict_app(
     token="token_example",
     app_id="string_example",
     request_id="string_example",
@@ -3005,12 +3011,16 @@ List approved apps for an org or workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_response = slackweb.admin/apps/approved.list(
-    token="token_example",
-    limit=1,
-    cursor="string_example",
-    team_id="string_example",
-    enterprise_id="string_example",
+list_response = (
+    slackweb.admin
+    / apps
+    / approved.list(
+        token="token_example",
+        limit=1,
+        cursor="string_example",
+        team_id="string_example",
+        enterprise_id="string_example",
+    )
 )
 ```
 
@@ -3051,11 +3061,15 @@ List app requests for a team/workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_response = slackweb.admin/apps/requests.list(
-    token="token_example",
-    limit=1,
-    cursor="string_example",
-    team_id="string_example",
+list_response = (
+    slackweb.admin
+    / apps
+    / requests.list(
+        token="token_example",
+        limit=1,
+        cursor="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -3094,12 +3108,16 @@ List restricted apps for an org or workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_list_response = slackweb.admin/apps/restricted.get_list(
-    token="token_example",
-    limit=1,
-    cursor="string_example",
-    team_id="string_example",
-    enterprise_id="string_example",
+get_list_response = (
+    slackweb.admin
+    / apps
+    / restricted.get_list(
+        token="token_example",
+        limit=1,
+        cursor="string_example",
+        team_id="string_example",
+        enterprise_id="string_example",
+    )
 )
 ```
 
@@ -3140,7 +3158,7 @@ Archive a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-archive_channel_response = slackweb.admin/conversations.archive_channel(
+archive_channel_response = slackweb.admin / conversations.archive_channel(
     token="token_example",
     channel_id="string_example",
 )
@@ -3178,9 +3196,12 @@ Convert a public channel to a private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-convert_to_private_channel_response = slackweb.admin/conversations.convert_to_private_channel(
-    token="token_example",
-    channel_id="string_example",
+convert_to_private_channel_response = (
+    slackweb.admin
+    / conversations.convert_to_private_channel(
+        token="token_example",
+        channel_id="string_example",
+    )
 )
 ```
 
@@ -3216,13 +3237,16 @@ Create a public or private channel-based conversation.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_channel_based_conversation_response = slackweb.admin/conversations.create_channel_based_conversation(
-    token="token_example",
-    is_private=True,
-    name="string_example",
-    description="string_example",
-    org_wide=True,
-    team_id="string_example",
+create_channel_based_conversation_response = (
+    slackweb.admin
+    / conversations.create_channel_based_conversation(
+        token="token_example",
+        is_private=True,
+        name="string_example",
+        description="string_example",
+        org_wide=True,
+        team_id="string_example",
+    )
 )
 ```
 
@@ -3274,7 +3298,7 @@ Delete a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-delete_channel_response = slackweb.admin/conversations.delete_channel(
+delete_channel_response = slackweb.admin / conversations.delete_channel(
     token="token_example",
     channel_id="string_example",
 )
@@ -3312,10 +3336,13 @@ Disconnect a connected channel from one or more workspaces.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-disconnect_shared_channel_response = slackweb.admin/conversations.disconnect_shared_channel(
-    token="token_example",
-    channel_id="string_example",
-    leaving_team_ids="string_example",
+disconnect_shared_channel_response = (
+    slackweb.admin
+    / conversations.disconnect_shared_channel(
+        token="token_example",
+        channel_id="string_example",
+        leaving_team_ids="string_example",
+    )
 )
 ```
 
@@ -3355,7 +3382,7 @@ Get conversation preferences for a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_conversation_prefs_response = slackweb.admin/conversations.get_conversation_prefs(
+get_conversation_prefs_response = slackweb.admin / conversations.get_conversation_prefs(
     token="token_example",
     channel_id="channel_id_example",
 )
@@ -3390,7 +3417,7 @@ Get all the workspaces a given public or private channel is connected to within 
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_teams_list_response = slackweb.admin/conversations.get_teams_list(
+get_teams_list_response = slackweb.admin / conversations.get_teams_list(
     token="token_example",
     channel_id="channel_id_example",
     cursor="string_example",
@@ -3435,7 +3462,7 @@ Invite a user to a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-invite_user_to_channel_response = slackweb.admin/conversations.invite_user_to_channel(
+invite_user_to_channel_response = slackweb.admin / conversations.invite_user_to_channel(
     token="token_example",
     channel_id="string_example",
     user_ids="string_example",
@@ -3478,7 +3505,7 @@ Rename a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-rename_channel_response = slackweb.admin/conversations.rename_channel(
+rename_channel_response = slackweb.admin / conversations.rename_channel(
     token="token_example",
     channel_id="string_example",
     name="string_example",
@@ -3519,7 +3546,7 @@ Search for public or private channels in an Enterprise organization.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-search_channels_response = slackweb.admin/conversations.search_channels(
+search_channels_response = slackweb.admin / conversations.search_channels(
     token="token_example",
     team_ids="string_example",
     query="string_example",
@@ -3584,7 +3611,7 @@ Set the posting permissions for a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_conversation_prefs_response = slackweb.admin/conversations.set_conversation_prefs(
+set_conversation_prefs_response = slackweb.admin / conversations.set_conversation_prefs(
     token="token_example",
     channel_id="string_example",
     prefs="string_example",
@@ -3627,12 +3654,15 @@ Set the workspaces in an Enterprise grid org that connect to a public or private
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_teams_workspace_connection_response = slackweb.admin/conversations.set_teams_workspace_connection(
-    token="token_example",
-    channel_id="string_example",
-    org_channel=True,
-    target_team_ids="string_example",
-    team_id="string_example",
+set_teams_workspace_connection_response = (
+    slackweb.admin
+    / conversations.set_teams_workspace_connection(
+        token="token_example",
+        channel_id="string_example",
+        org_channel=True,
+        target_team_ids="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -3680,7 +3710,7 @@ Unarchive a public or private channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-unarchive_channel_response = slackweb.admin/conversations.unarchive_channel(
+unarchive_channel_response = slackweb.admin / conversations.unarchive_channel(
     token="token_example",
     channel_id="string_example",
 )
@@ -3718,12 +3748,16 @@ List all disconnected channels—i.e., channels that were once connected to othe
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_original_connected_channel_info_response = slackweb.admin/conversations/ekm.list_original_connected_channel_info(
-    token="token_example",
-    channel_ids="string_example",
-    team_ids="string_example",
-    limit=1,
-    cursor="string_example",
+list_original_connected_channel_info_response = (
+    slackweb.admin
+    / conversations
+    / ekm.list_original_connected_channel_info(
+        token="token_example",
+        channel_ids="string_example",
+        team_ids="string_example",
+        limit=1,
+        cursor="string_example",
+    )
 )
 ```
 
@@ -3768,11 +3802,15 @@ Add an allowlist of IDP groups for accessing a channel
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_group_idp_groups_response = slackweb.admin/conversations/restrict_access.add_group_idp_groups(
-    channel_id="string_example",
-    group_id="string_example",
-    token="string_example",
-    team_id="string_example",
+add_group_idp_groups_response = (
+    slackweb.admin
+    / conversations
+    / restrict_access.add_group_idp_groups(
+        channel_id="string_example",
+        group_id="string_example",
+        token="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -3816,10 +3854,14 @@ List all IDP Groups linked to a channel
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_groups_response = slackweb.admin/conversations/restrict_access.list_groups(
-    token="token_example",
-    channel_id="channel_id_example",
-    team_id="string_example",
+list_groups_response = (
+    slackweb.admin
+    / conversations
+    / restrict_access.list_groups(
+        token="token_example",
+        channel_id="channel_id_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -3854,11 +3896,15 @@ Remove a linked IDP group linked from a private channel
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-remove_idp_group_response = slackweb.admin/conversations/restrict_access.remove_idp_group(
-    channel_id="string_example",
-    group_id="string_example",
-    team_id="string_example",
-    token="string_example",
+remove_idp_group_response = (
+    slackweb.admin
+    / conversations
+    / restrict_access.remove_idp_group(
+        channel_id="string_example",
+        group_id="string_example",
+        team_id="string_example",
+        token="string_example",
+    )
 )
 ```
 
@@ -3902,7 +3948,7 @@ Add an emoji.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_emoji_response = slackweb.admin/emoji.add_emoji(
+add_emoji_response = slackweb.admin / emoji.add_emoji(
     name="string_example",
     token="string_example",
     url="string_example",
@@ -3945,7 +3991,7 @@ Add an emoji alias.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-alias_add_response = slackweb.admin/emoji.alias_add(
+alias_add_response = slackweb.admin / emoji.alias_add(
     alias_for="string_example",
     name="string_example",
     token="string_example",
@@ -3988,7 +4034,7 @@ List emoji for an Enterprise Grid organization.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_enterprise_emoji_response = slackweb.admin/emoji.list_enterprise_emoji(
+list_enterprise_emoji_response = slackweb.admin / emoji.list_enterprise_emoji(
     token="token_example",
     cursor="string_example",
     limit=1,
@@ -4028,7 +4074,7 @@ Remove an emoji across an Enterprise Grid organization
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-remove_enterprise_emoji_response = slackweb.admin/emoji.remove_enterprise_emoji(
+remove_enterprise_emoji_response = slackweb.admin / emoji.remove_enterprise_emoji(
     name="string_example",
     token="string_example",
 )
@@ -4066,7 +4112,7 @@ Rename an emoji.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-rename_emoji_response = slackweb.admin/emoji.rename_emoji(
+rename_emoji_response = slackweb.admin / emoji.rename_emoji(
     name="string_example",
     new_name="string_example",
     token="string_example",
@@ -4109,7 +4155,7 @@ Approve a workspace invite request.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-approve_request_response = slackweb.admin/invite_requests.approve_request(
+approve_request_response = slackweb.admin / invite_requests.approve_request(
     invite_request_id="string_example",
     token="token_example",
     team_id="string_example",
@@ -4152,7 +4198,7 @@ Deny a workspace invite request.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-deny_request_response = slackweb.admin/invite_requests.deny_request(
+deny_request_response = slackweb.admin / invite_requests.deny_request(
     invite_request_id="string_example",
     token="token_example",
     team_id="string_example",
@@ -4195,11 +4241,14 @@ List all pending workspace invite requests.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_pending_workspace_invite_requests_response = slackweb.admin/invite_requests.list_pending_workspace_invite_requests(
-    token="token_example",
-    team_id="string_example",
-    cursor="string_example",
-    limit=1,
+list_pending_workspace_invite_requests_response = (
+    slackweb.admin
+    / invite_requests.list_pending_workspace_invite_requests(
+        token="token_example",
+        team_id="string_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -4240,11 +4289,15 @@ List all approved workspace invite requests.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_response = slackweb.admin/invite_requests/approved.list(
-    token="token_example",
-    team_id="string_example",
-    cursor="string_example",
-    limit=1,
+list_response = (
+    slackweb.admin
+    / invite_requests
+    / approved.list(
+        token="token_example",
+        team_id="string_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -4285,11 +4338,15 @@ List all denied workspace invite requests.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_response = slackweb.admin/invite_requests/denied.list(
-    token="token_example",
-    team_id="string_example",
-    cursor="string_example",
-    limit=1,
+list_response = (
+    slackweb.admin
+    / invite_requests
+    / denied.list(
+        token="token_example",
+        team_id="string_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -4330,7 +4387,7 @@ Create an Enterprise team.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-create_enterprise_team_response = slackweb.admin/teams.create_enterprise_team(
+create_enterprise_team_response = slackweb.admin / teams.create_enterprise_team(
     token="token_example",
     team_domain="string_example",
     team_name="string_example",
@@ -4383,7 +4440,7 @@ List all teams on an Enterprise organization
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_all_response = slackweb.admin/teams.list_all(
+list_all_response = slackweb.admin / teams.list_all(
     token="token_example",
     limit=1,
     cursor="string_example",
@@ -4423,11 +4480,15 @@ List all of the admins on a given workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_all_response = slackweb.admin/teams/admins.get_all(
-    token="token_example",
-    team_id="team_id_example",
-    limit=1,
-    cursor="string_example",
+get_all_response = (
+    slackweb.admin
+    / teams
+    / admins.get_all(
+        token="token_example",
+        team_id="team_id_example",
+        limit=1,
+        cursor="string_example",
+    )
 )
 ```
 
@@ -4466,11 +4527,15 @@ List all of the owners on a given workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_owners_response = slackweb.admin/teams/owners.list_owners(
-    token="token_example",
-    team_id="team_id_example",
-    limit=1,
-    cursor="string_example",
+list_owners_response = (
+    slackweb.admin
+    / teams
+    / owners.list_owners(
+        token="token_example",
+        team_id="team_id_example",
+        limit=1,
+        cursor="string_example",
+    )
 )
 ```
 
@@ -4509,9 +4574,13 @@ Fetch information about settings in a workspace
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_info_response = slackweb.admin/teams/settings.get_info(
-    token="token_example",
-    team_id="team_id_example",
+get_info_response = (
+    slackweb.admin
+    / teams
+    / settings.get_info(
+        token="token_example",
+        team_id="team_id_example",
+    )
 )
 ```
 
@@ -4542,10 +4611,14 @@ Set the default channels of a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_default_channels_response = slackweb.admin/teams/settings.set_default_channels(
-    channel_ids="string_example",
-    team_id="string_example",
-    token="string_example",
+set_default_channels_response = (
+    slackweb.admin
+    / teams
+    / settings.set_default_channels(
+        channel_ids="string_example",
+        team_id="string_example",
+        token="string_example",
+    )
 )
 ```
 
@@ -4585,10 +4658,14 @@ Set the description of a given workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_description_response = slackweb.admin/teams/settings.set_description(
-    token="token_example",
-    description="string_example",
-    team_id="string_example",
+set_description_response = (
+    slackweb.admin
+    / teams
+    / settings.set_description(
+        token="token_example",
+        description="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -4628,10 +4705,14 @@ An API method that allows admins to set the discoverability of a given workspace
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_discoverability_of_workspace_response = slackweb.admin/teams/settings.set_discoverability_of_workspace(
-    token="token_example",
-    discoverability="string_example",
-    team_id="string_example",
+set_discoverability_of_workspace_response = (
+    slackweb.admin
+    / teams
+    / settings.set_discoverability_of_workspace(
+        token="token_example",
+        discoverability="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -4671,10 +4752,14 @@ Sets the icon of a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_icon_response = slackweb.admin/teams/settings.set_icon(
-    image_url="string_example",
-    team_id="string_example",
-    token="string_example",
+set_icon_response = (
+    slackweb.admin
+    / teams
+    / settings.set_icon(
+        image_url="string_example",
+        team_id="string_example",
+        token="string_example",
+    )
 )
 ```
 
@@ -4714,10 +4799,14 @@ Set the name of a given workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_name_response = slackweb.admin/teams/settings.set_name(
-    token="token_example",
-    name="string_example",
-    team_id="string_example",
+set_name_response = (
+    slackweb.admin
+    / teams
+    / settings.set_name(
+        token="token_example",
+        name="string_example",
+        team_id="string_example",
+    )
 )
 ```
 
@@ -4757,7 +4846,7 @@ Add one or more default channels to an IDP group.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_default_channels_response = slackweb.admin/usergroups.add_default_channels(
+add_default_channels_response = slackweb.admin / usergroups.add_default_channels(
     token="token_example",
     channel_ids="string_example",
     usergroup_id="string_example",
@@ -4805,11 +4894,14 @@ Associate one or more default workspaces with an organization-wide IDP group.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-associate_default_workspaces_response = slackweb.admin/usergroups.associate_default_workspaces(
-    token="token_example",
-    team_ids="string_example",
-    usergroup_id="string_example",
-    auto_provision=True,
+associate_default_workspaces_response = (
+    slackweb.admin
+    / usergroups.associate_default_workspaces(
+        token="token_example",
+        team_ids="string_example",
+        usergroup_id="string_example",
+        auto_provision=True,
+    )
 )
 ```
 
@@ -4853,7 +4945,7 @@ List the channels linked to an org-level IDP group (user group).
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_channels_get_response = slackweb.admin/usergroups.list_channels_get(
+list_channels_get_response = slackweb.admin / usergroups.list_channels_get(
     token="token_example",
     usergroup_id="usergroup_id_example",
     team_id="string_example",
@@ -4898,7 +4990,7 @@ Remove one or more default channels from an org-level IDP group (user group).
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-remove_channels_response = slackweb.admin/usergroups.remove_channels(
+remove_channels_response = slackweb.admin / usergroups.remove_channels(
     token="token_example",
     channel_ids="string_example",
     usergroup_id="string_example",
@@ -4941,7 +5033,7 @@ Add an Enterprise user to a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_workspace_user_response = slackweb.admin/users.add_workspace_user(
+add_workspace_user_response = slackweb.admin / users.add_workspace_user(
     token="token_example",
     team_id="string_example",
     user_id="string_example",
@@ -4999,7 +5091,7 @@ Invite a user to a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-invite_user_to_workspace_response = slackweb.admin/users.invite_user_to_workspace(
+invite_user_to_workspace_response = slackweb.admin / users.invite_user_to_workspace(
     token="token_example",
     channel_ids="string_example",
     email="string_example",
@@ -5077,7 +5169,7 @@ List users on a workspace
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_workspace_users_response = slackweb.admin/users.list_workspace_users(
+list_workspace_users_response = slackweb.admin / users.list_workspace_users(
     token="token_example",
     team_id="team_id_example",
     cursor="string_example",
@@ -5122,7 +5214,7 @@ Remove a user from a workspace.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-remove_user_from_workspace_response = slackweb.admin/users.remove_user_from_workspace(
+remove_user_from_workspace_response = slackweb.admin / users.remove_user_from_workspace(
     token="token_example",
     team_id="string_example",
     user_id="string_example",
@@ -5165,7 +5257,7 @@ Set an existing guest, regular user, or owner to be an admin user.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_admin_user_response = slackweb.admin/users.set_admin_user(
+set_admin_user_response = slackweb.admin / users.set_admin_user(
     token="token_example",
     team_id="string_example",
     user_id="string_example",
@@ -5208,7 +5300,7 @@ Set an expiration for a guest user
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_expiration_guest_response = slackweb.admin/users.set_expiration_guest(
+set_expiration_guest_response = slackweb.admin / users.set_expiration_guest(
     token="token_example",
     expiration_ts=1,
     team_id="string_example",
@@ -5256,7 +5348,7 @@ Set an existing guest user, admin user, or owner to be a regular user.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_regular_user_response = slackweb.admin/users.set_regular_user(
+set_regular_user_response = slackweb.admin / users.set_regular_user(
     token="token_example",
     team_id="string_example",
     user_id="string_example",
@@ -5299,7 +5391,7 @@ Set an existing guest, regular user, or admin user to be a workspace owner.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_workspace_owner_response = slackweb.admin/users.set_workspace_owner(
+set_workspace_owner_response = slackweb.admin / users.set_workspace_owner(
     token="token_example",
     team_id="string_example",
     user_id="string_example",
@@ -5342,10 +5434,14 @@ Invalidate a single session for a user by session_id
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-invalidate_session_response = slackweb.admin/users/session.invalidate_session(
-    token="token_example",
-    session_id=1,
-    team_id="string_example",
+invalidate_session_response = (
+    slackweb.admin
+    / users
+    / session.invalidate_session(
+        token="token_example",
+        session_id=1,
+        team_id="string_example",
+    )
 )
 ```
 
@@ -5383,11 +5479,15 @@ Wipes all valid sessions on all devices for a given user
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-reset_sessions_response = slackweb.admin/users/session.reset_sessions(
-    token="token_example",
-    user_id="string_example",
-    mobile_only=True,
-    web_only=True,
+reset_sessions_response = (
+    slackweb.admin
+    / users
+    / session.reset_sessions(
+        token="token_example",
+        user_id="string_example",
+        mobile_only=True,
+        web_only=True,
+    )
 )
 ```
 
@@ -5770,11 +5870,15 @@ Get a list of authorizations for the given event context. Each authorization rep
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_list_response = slackweb.apps/event/authorizations.get_list(
-    token="token_example",
-    event_context="event_context_example",
-    cursor="string_example",
-    limit=1,
+get_list_response = (
+    slackweb.apps
+    / event
+    / authorizations.get_list(
+        token="token_example",
+        event_context="event_context_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -5809,10 +5913,13 @@ Allows an app to request additional scopes
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-additional_scopes_request_response = slackweb.apps/permissions.additional_scopes_request(
-    token="token_example",
-    scopes="scopes_example",
-    trigger_id="trigger_id_example",
+additional_scopes_request_response = (
+    slackweb.apps
+    / permissions.additional_scopes_request(
+        token="token_example",
+        scopes="scopes_example",
+        trigger_id="trigger_id_example",
+    )
 )
 ```
 
@@ -5849,7 +5956,7 @@ Returns list of permissions this app has on a team.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_permissions_response = slackweb.apps/permissions.list_permissions(
+list_permissions_response = slackweb.apps / permissions.list_permissions(
     token="string_example",
 )
 ```
@@ -5879,10 +5986,14 @@ Returns list of resource grants this app has on a team.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_resources_list_response = slackweb.apps/permissions/resources.get_resources_list(
-    token="token_example",
-    cursor="string_example",
-    limit=1,
+get_resources_list_response = (
+    slackweb.apps
+    / permissions
+    / resources.get_resources_list(
+        token="token_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -5919,8 +6030,12 @@ Returns list of scopes this app has on a team.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_list_response = slackweb.apps/permissions/scopes.get_list(
-    token="token_example",
+get_list_response = (
+    slackweb.apps
+    / permissions
+    / scopes.get_list(
+        token="token_example",
+    )
 )
 ```
 
@@ -5949,10 +6064,14 @@ Returns list of user grants and corresponding scopes this app has on a team.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_user_grants_response = slackweb.apps/permissions/users.list_user_grants(
-    token="token_example",
-    cursor="string_example",
-    limit=1,
+list_user_grants_response = (
+    slackweb.apps
+    / permissions
+    / users.list_user_grants(
+        token="token_example",
+        cursor="string_example",
+        limit=1,
+    )
 )
 ```
 
@@ -5989,11 +6108,15 @@ Enables an app to trigger a permissions modal to grant an app access to a user a
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-request_modal_response = slackweb.apps/permissions/users.request_modal(
-    token="token_example",
-    scopes="scopes_example",
-    trigger_id="trigger_id_example",
-    user="user_example",
+request_modal_response = (
+    slackweb.apps
+    / permissions
+    / users.request_modal(
+        token="token_example",
+        scopes="scopes_example",
+        trigger_id="trigger_id_example",
+        user="user_example",
+    )
 )
 ```
 
@@ -6424,7 +6547,7 @@ Registers new participants added to a Call.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_new_participant_response = slackweb.calls/participants.add_new_participant(
+add_new_participant_response = slackweb.calls / participants.add_new_participant(
     token="token_example",
     id="string_example",
     users="string_example",
@@ -6467,7 +6590,7 @@ Registers participants removed from a Call.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-register_removed_response = slackweb.calls/participants.register_removed(
+register_removed_response = slackweb.calls / participants.register_removed(
     token="token_example",
     id="string_example",
     users="string_example",
@@ -7174,7 +7297,7 @@ Returns a list of scheduled messages.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_response = slackweb.chat/scheduled_messages.list(
+list_response = slackweb.chat / scheduled_messages.list(
     token="string_example",
     channel="string_example",
     latest=3.14,
@@ -8932,7 +9055,7 @@ Deletes an existing comment on a file.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-delete_comment_response = slackweb.files/comments.delete_comment(
+delete_comment_response = slackweb.files / comments.delete_comment(
     token="string_example",
     file="string_example",
     id="string_example",
@@ -8975,7 +9098,7 @@ Adds a file from a remote service
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-add_from_remote_response = slackweb.files/remote.add_from_remote(
+add_from_remote_response = slackweb.files / remote.add_from_remote(
     title="string_example",
     external_id="string_example",
     external_url="string_example",
@@ -9038,7 +9161,7 @@ Remove a remote file.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-delete_file_response = slackweb.files/remote.delete_file(
+delete_file_response = slackweb.files / remote.delete_file(
     external_id="string_example",
     file="string_example",
     token="string_example",
@@ -9081,7 +9204,7 @@ Retrieve information about a remote file added to Slack
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_info_response = slackweb.files/remote.get_info(
+get_info_response = slackweb.files / remote.get_info(
     token="string_example",
     file="string_example",
     external_id="string_example",
@@ -9121,7 +9244,7 @@ Retrieve information about a remote file added to Slack
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_remote_files_response = slackweb.files/remote.list_remote_files(
+list_remote_files_response = slackweb.files / remote.list_remote_files(
     token="string_example",
     channel="string_example",
     ts_from=3.14,
@@ -9176,7 +9299,7 @@ Share a remote file into a channel.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-share_remote_file_response = slackweb.files/remote.share_remote_file(
+share_remote_file_response = slackweb.files / remote.share_remote_file(
     token="string_example",
     file="string_example",
     external_id="string_example",
@@ -9221,7 +9344,7 @@ Updates an existing remote file.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_remote_file_response = slackweb.files/remote.update_remote_file(
+update_remote_file_response = slackweb.files / remote.update_remote_file(
     title="string_example",
     external_id="string_example",
     external_url="string_example",
@@ -9479,7 +9602,7 @@ Exchanges a temporary OAuth verifier code for an access token.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-exchange_token_response = slackweb.oauth/v2.exchange_token(
+exchange_token_response = slackweb.oauth / v2.exchange_token(
     code="code_example",
     client_id="string_example",
     client_secret="string_example",
@@ -10503,7 +10626,7 @@ Retrieve a team's profile.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_profile_response = slackweb.team/profile.get_profile(
+get_profile_response = slackweb.team / profile.get_profile(
     token="token_example",
     visibility="string_example",
 )
@@ -10878,7 +11001,7 @@ List all users in a User Group
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-list_all_users_response = slackweb.usergroups/users.list_all_users(
+list_all_users_response = slackweb.usergroups / users.list_all_users(
     token="token_example",
     usergroup="usergroup_example",
     include_disabled=True,
@@ -10918,7 +11041,7 @@ Update the list of users for a User Group
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-update_list_response = slackweb.usergroups/users.update_list(
+update_list_response = slackweb.usergroups / users.update_list(
     token="token_example",
     usergroup="string_example",
     users="string_example",
@@ -11453,7 +11576,7 @@ Retrieves a user's profile information.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-get_profile_info_response = slackweb.users/profile.get_profile_info(
+get_profile_info_response = slackweb.users / profile.get_profile_info(
     token="token_example",
     include_labels=True,
     user="string_example",
@@ -11493,7 +11616,7 @@ Set the profile information for a user.
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
 ```python
-set_profile_info_response = slackweb.users/profile.set_profile_info(
+set_profile_info_response = slackweb.users / profile.set_profile_info(
     token="token_example",
     name="string_example",
     profile="string_example",
